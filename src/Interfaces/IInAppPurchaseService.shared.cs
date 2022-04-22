@@ -50,6 +50,14 @@ namespace Companova.Xamarin.Common.Android.Services
         Task<InAppPurchaseResult> PurchaseAsync(string productId);
 
         /// <summary>
+        /// Finalizes the Purchase by calling AcklowledgePurchase or ConsumePurchase
+        /// </summary>
+        /// <param name="token">Purchase Token</param>
+        /// <param name="productType">Product Type</param>
+        /// <returns>Task</returns>
+        Task FinalizePurchaseAsync(string token, ProductType productType);
+
+        /// <summary>
         /// Restores all previous purchases
         /// </summary>
         /// <param name="productType">Product Type (inapp or subs)</param>

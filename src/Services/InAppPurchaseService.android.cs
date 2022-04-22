@@ -437,7 +437,7 @@ namespace Companova.Xamarin.Common.Android.Services
         /// </summary>
         /// <param name="token">Purchase Token</param>
         /// <param name="productType">Product Type</param>
-        /// <returns></returns>
+        /// <returns>Task</returns>
         public async Task FinalizePurchaseAsync(string token, ProductType productType)
         {
             switch (productType)
