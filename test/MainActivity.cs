@@ -227,12 +227,15 @@ namespace TestApp
         private async void OnPurchaseClick(object sender, EventArgs e)
         {
             // Make sure you set you product Id
-            string productId = "NoAds";
+            string productId = "noads";
 
             try
             {
                 // Initialize Billing Client
                 await InitializeInAppPurchaseAsync();
+
+                // First, get the products 
+                IEnumerable<Product> products = await _inAppPurchaseService.LoadProductsAsync(new string[] { productId }, ProductType.NonConsumable);
 
                 // Initiate the purchase process
                 InAppPurchaseResult purchase = await _inAppPurchaseService.PurchaseAsync(productId);

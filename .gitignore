@@ -352,5 +352,6 @@ MigrationBackup/
 # Mac
 .DS_Store
 
-# google-services.json
+# google-services.json and manifest
 google-services.json
+/test/Properties/AndroidManifest - Alpha.xml
