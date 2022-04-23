@@ -12,7 +12,8 @@ master | dev
 
 ### Setup:
 ![Nuget Version](https://img.shields.io/nuget/v/Companova.Xamarin.Common.Android.Services)
-Available on NuGet: [Companova.Xamarin.Common.Android.Services](https://www.nuget.org/packages/Companova.Xamarin.Common.Android.Services/)
+
+**Available on NuGet:** [Companova.Xamarin.Common.Android.Services](https://www.nuget.org/packages/Companova.Xamarin.Common.Android.Services/)
 
 # Test App
 ### Refer to Test App for detailed usage patterns
