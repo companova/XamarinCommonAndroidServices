@@ -353,5 +353,5 @@ MigrationBackup/
 .DS_Store
 
 # google-services.json and manifest
-google-services.json
+google-services - Alpha.json
 /test/Properties/AndroidManifest - Alpha.xml
