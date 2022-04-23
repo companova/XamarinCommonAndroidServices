@@ -32,15 +32,21 @@
     <!--TODO: Fill these in-->
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/companova/XamarinInAppPurchaseService/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/companova/XamarinInAppPurchaseService/</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/companova/XamarinCommonAndroidServices/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/companova/XamarinCommonAndroidServices/</RepositoryUrl>
     <PackageReleaseNotes>Initial Beta Release</PackageReleaseNotes>
     <!--<PackageIconUrl>ICON URL</PackageIconUrl>-->
-    <PackageTags>xamarin, android, xamarin.forms, plugin, Companova, Common.Android.Services</PackageTags>
+    <PackageTags>xamarin, android, xamarin.forms, plugin, billing client, firebase, admob, interstitial ads, Companova, Common.Android.Services</PackageTags>
     
-    <Title>PluginTest Plugin for Xamarin and Windows</Title>
-    <Summary>Summary of nuget</Summary>
-    <Description>Plugin Description</Description>
+    <Title>Companova.Xamarin.Common.Android.Services</Title>
+    <Summary>Xamarin implementation of Common Android Services</Summary>
+    <Description>
+      Xamarin implementation of Common Android Services:
+
+      Interstitial Ads
+      Firebase Analytics
+      In-App-Purchases supporting Billing library 4.0.0
+    </Description>
 
     
     <Owners>Dima Maltsev</Owners>
