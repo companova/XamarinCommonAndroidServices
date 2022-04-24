@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">Common Services Test App</string>
+  <string name="action_settings">Settings</string>
+  <string name="log_event">Log Event</string>
+  <string name="show_ad">Show Ad</string>
+  <string name="purchase">Purchase</string>
+  <string name="restore">Restore</string>
+</resources>

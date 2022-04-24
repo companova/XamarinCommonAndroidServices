@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Mac
+.DS_Store
+
+# google-services.json and manifest
+google-services - Alpha.json
+/test/Properties/AndroidManifest - Alpha.xml
