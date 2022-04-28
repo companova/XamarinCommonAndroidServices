@@ -15,6 +15,7 @@ using Google.Android.Material.FloatingActionButton;
 
 using Firebase.Analytics;
 
+using Companova.Common.Extensions;
 using Companova.Xamarin.Common.Android.Services;
 
 namespace TestApp
@@ -294,7 +295,7 @@ namespace TestApp
                 // Initiate the purchase process
                 List<InAppPurchaseResult> purchases = await _inAppPurchaseService.RestoreAsync(ProductType.NonConsumable);
 
-                if (purchases == null || purchases.Count == 0)
+                if (purchases.IsNullOrEmpty())
                 {
                     // Nothing to Restore.
 
