@@ -12,8 +12,14 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  nuGetToolVersion: '6.1.0'
 
 steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Install Nuget - $(nuGetToolVersion)'
+  inputs:
+    versionSpec: '$(nuGetToolVersion)'
+
 - task: NuGetCommand@2
   displayName: 'Restore Nuget Packages'
   inputs:
