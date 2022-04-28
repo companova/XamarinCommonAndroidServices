@@ -16,8 +16,8 @@
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
-    <Version>0.0.4-preview</Version>
-    <PackageVersion>0.0.4-preview</PackageVersion>
+    <Version>1.0.0</Version>
+    <PackageVersion>1.0.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -36,12 +36,12 @@
     <RepositoryUrl>https://github.com/companova/XamarinCommonAndroidServices/</RepositoryUrl>
     <PackageReleaseNotes>Initial Beta Release</PackageReleaseNotes>
     <!--<PackageIconUrl>ICON URL</PackageIconUrl>-->
-    <PackageTags>xamarin, android, xamarin.forms, plugin, billing client, firebase, admob, interstitial ads, Companova, Common.Android.Services</PackageTags>
+    <PackageTags>xamarin, android, xamarin.forms, plugin, billing client, in-app purchase, firebase, analytics, admob, interstitial ads, Companova, Common.Android.Services</PackageTags>
     
     <Title>Companova.Xamarin.Common.Android.Services</Title>
     <Summary>Xamarin implementation of Common Android Services</Summary>
     <Description>
-      Xamarin implementation of Common Android Services:
+      Xamarin implementation for Common Android Services.
 
       Interstitial Ads
       Firebase Analytics
