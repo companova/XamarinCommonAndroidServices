@@ -20,6 +20,14 @@ steps:
   inputs:
     versionSpec: '$(nuGetToolVersion)'
 
+# Ensure Java SDK is available for the Build. See:
+# https://github.com/actions/runner-images/issues/8828
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
 - task: NuGetCommand@2
   displayName: 'Restore Nuget Packages'
   inputs:
@@ -32,14 +40,6 @@ steps:
     solution: '**/*.sln'
     configuration: $(buildConfiguration)
     logProjectEvents: true
-
-# Ensure Java SDK is available for the Build. See:
-# https://github.com/actions/runner-images/issues/8828
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
 
 # Copy all the nupkg files created to the artifact directory
 - task: CopyFiles@2
