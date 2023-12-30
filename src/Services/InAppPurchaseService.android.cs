@@ -8,6 +8,7 @@ using Android.Util;
 using Android.Runtime;
 
 using Android.BillingClient.Api;
+using Org.Apache.Http.Conn;
 
 namespace Companova.Xamarin.Common.Android.Services
 {
@@ -24,7 +25,7 @@ namespace Companova.Xamarin.Common.Android.Services
     [Preserve(AllMembers = true)]
     public class InAppPurchaseService : Java.Lang.Object, IInAppPurchaseService, 
         IPurchasesUpdatedListener, IBillingClientStateListener,
-        IPurchaseHistoryResponseListener, IPurchasesResponseListener
+        IPurchasesResponseListener
     {
 
         #region IBillingClientStateListener
@@ -86,31 +87,6 @@ namespace Companova.Xamarin.Common.Android.Services
             _transactionPurchased = null;
 
             return;
-        }
-
-        #endregion
-
-        #region IPurchaseHistoryResponseListener
-
-        /// <summary>
-        /// Callback used by Billing Client when the Purchases are Restored
-        /// </summary>
-        /// <param name="result">BillingResult</param>
-        /// <param name="listOfPurchaseHistoryRecords">List of History Records</param>
-        public void OnPurchaseHistoryResponse(BillingResult result, IList<PurchaseHistoryRecord> listOfPurchaseHistoryRecords)
-        {
-            Log.Debug(_billingTag, $"In OnSkuDetailsResponse: Code: {result.ResponseCode}, Message: {result.DebugMessage}");
-            Log.Debug(_billingTag, $"listOfPurchaseHistoryRecords is null == {listOfPurchaseHistoryRecords == null}");
-
-            if (listOfPurchaseHistoryRecords == null)
-            {
-                return;
-            }
-
-            foreach (PurchaseHistoryRecord r in listOfPurchaseHistoryRecords)
-            {
-                Log.Debug(_billingTag, $"{r.Skus.FirstOrDefault()}, {r.PurchaseTime}, {r.OriginalJson}");
-            }
         }
 
         #endregion
@@ -370,21 +346,16 @@ namespace Companova.Xamarin.Common.Android.Services
         {
             string skuType = GetBillingSkuType(productType);
 
-            // Setup the Task Source first for the Async callback
-            _purchasesRestored = new TaskCompletionSource<IList<Purchase>>();
-            Task<IList<Purchase>> taskRestoreComplete = _purchasesRestored.Task;
+            // Query existing Purchases. Much simpler in 5.0 than in 4.0
+            QueryPurchasesParams query = QueryPurchasesParams.NewBuilder().SetProductType(skuType).Build();
+            QueryPurchasesResult purchasesResult = await _billingClient.QueryPurchasesAsync(query);
 
-            // Query existing Purchases
-            _billingClient.QueryPurchasesAsync(skuType, this);
-
-            // Wait till the Task is complete (e.g. Succeeded or Failed - which will result in Exception)
-            IList<Purchase> listOfRestoredPurchases = await taskRestoreComplete;
-            _transactionPurchased = null;
+            IList<Purchase> listOfRestoredPurchases = purchasesResult.Purchases;
 
             List<InAppPurchaseResult> purchases = new List<InAppPurchaseResult>(listOfRestoredPurchases.Count);
             foreach (Purchase p in listOfRestoredPurchases)
             {
-                Log.Debug(_billingTag, $"Sku: {p.Skus.FirstOrDefault()}, Acknowledged: {p.IsAcknowledged}, State: {p.PurchaseState}");
+                Log.Debug(_billingTag, $"Sku: {p.Products.FirstOrDefault()}, Acknowledged: {p.IsAcknowledged}, State: {p.PurchaseState}");
 
                 // Convert BillingClient Purchases
                 purchases.Add(p.ToInAppPurchase());

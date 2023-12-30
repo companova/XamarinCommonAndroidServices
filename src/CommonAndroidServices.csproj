@@ -14,8 +14,8 @@
     <PackageId>Companova.Xamarin.Common.Android.Services</PackageId>
     
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <AssemblyFileVersion>1.1.0.0</AssemblyFileVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.2.0.0</AssemblyFileVersion>
     <Version>1.1.0</Version>
     <PackageVersion>1.1.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
@@ -78,7 +78,7 @@
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
     <Compile Include="**\*.android.cs" />
     <PackageReference Include="Xamarin.Firebase.Analytics" Version="121.3.0.4" />
-    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="4.0.0" />
+    <PackageReference Include="Xamarin.Android.Google.BillingClient" Version="5.2.0" />
     <PackageReference Include="Xamarin.GooglePlayServices.Ads" Version="122.3.0" /> 
   </ItemGroup>
 
