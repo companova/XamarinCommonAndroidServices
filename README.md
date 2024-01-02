@@ -1,8 +1,8 @@
 # XamarinCommonAndroidServices
 Xamarin implementation of Common Android Services:
-- Interstitial Ads
-- Firebase Analytics
-- In-App-Purchases supporting Billing library 4.0.0
+- Interstitial Ads version 122.3.0
+- Firebase Analytics version 121.3.0.4
+- In-App-Purchases supporting Billing library 5.2.0
 
 ### Build Status:
 
@@ -20,6 +20,12 @@ master | dev
 # Test App
 ### Refer to Test App for detailed usage patterns
 https://github.com/companova/XamarinCommonAndroidServices/tree/dev/test
+
+How to setup:
+- Ensure your Application is published to Google Play and registered in Firebase.
+- Update google-services.json with your Application google-services.json file from Firebase
+- Replace package name 'com.company.appname' in AndroidManifest.xml to your application name
+- If you wish to test Interstitial Ads with your Application Ad Ids, replace AdMob Test ApplicationId and ```_interstitialAdUnitId``` with your Application specific values.
 
 ## Interstitial Ads
 

@@ -25,7 +25,7 @@ namespace TestApp
     {
         private const string _tag = "MainActivity";
         // TODO: Replace with your Ad Unit Id
-        private const string _interstitialAdUnitId = "ca-app-pub-4626693327904217/8710621545";
+        private const string _interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
 
         private bool _firebaseInitialized = false;
         private bool _inAppPuchaseInitialized = false;
