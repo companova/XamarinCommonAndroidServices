@@ -14,10 +14,10 @@
     <PackageId>Companova.Xamarin.Common.Android.Services</PackageId>
     
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <AssemblyFileVersion>1.2.0.0</AssemblyFileVersion>
-    <Version>1.2.0</Version>
-    <PackageVersion>1.2.0</PackageVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.3.0.0</AssemblyFileVersion>
+    <Version>1.3.0</Version>
+    <PackageVersion>1.3.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -34,7 +34,8 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/companova/XamarinCommonAndroidServices/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/companova/XamarinCommonAndroidServices/</RepositoryUrl>
-    <PackageReleaseNotes>Initial Beta Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Upgraded to Android SDK 13, Android Billing Library to 5.2.0, Firebase Analytics to 121.3.0.4 and GooglePlayServices Ads to 122.3.0</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <!--<PackageIconUrl>ICON URL</PackageIconUrl>-->
     <PackageTags>xamarin, android, xamarin.forms, plugin, billing client, in-app purchase, firebase, analytics, admob, interstitial ads, Companova, Common.Android.Services</PackageTags>
     
@@ -43,16 +44,16 @@
     <Description>
       Xamarin implementation for Common Android Services.
 
-      Interstitial Ads
-      Firebase Analytics
-      In-App-Purchases supporting Billing library 4.0.0
+      - Interstitial Ads version 122.3.0
+      - Firebase Analytics version 121.3.0.4
+      - In-App-Purchases supporting Billing library 5.2.0
     </Description>
 
     
     <Owners>Dima Maltsev</Owners>
     <Authors>Dima Maltsev</Authors>
     <Company>CompaNova LLC</Company>
-    <Copyright>Copyright 2022</Copyright>
+    <Copyright>Copyright 2022 - 2024</Copyright>
 
     <!--When built in 2019 will remove extra references on pack-->
     <DisableExtraReferences>true</DisableExtraReferences>
@@ -87,6 +88,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
